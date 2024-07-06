@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Freelance Platform{% endblock %}</title>
+    <!-- Add your CSS links or stylesheets here -->
+    <link rel="stylesheet" href="path/to/your/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'user_register' %}">Register</a></li>
+                <li><a href="{% url 'user_login' %}">Login</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile_edit' %}">Edit Profile</a></li>
+                    <li><a href="{% url 'work_request_submit' %}">Submit Work Request</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- Add your JavaScript links or scripts here -->
+    <script src="path/to/your/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'freelancing/base.html' %}
+{% block title %}Submit Work Request - Freelance Platform{% endblock %}
+{% block content %}
+    <h2>Submit Work Request</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
